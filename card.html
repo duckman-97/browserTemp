@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>React! React! React!</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src = "https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <style>
+            #container{
+                padding : 50px;
+                background-color : #fff;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id = "container"></div>
+
+
+
+        <script type = "text/babel">
+
+           
+            class Cardmaker extends React.Component{
+                render(){
+                    var cardStyle ={
+                        height : 200,
+                        width : 150,
+                        padding : 0,
+                        backgroundColor :"#cccccc",
+                        boxShadow : '0px 0px 5px #666'
+
+                    };
+
+
+                    return(
+                        <div style = {cardStyle}>
+                            {this.props.children}
+                            <Squere bgColor={this.props.bgColor}/>
+                            <Label bgColor = {this.props.bgColor}/>
+                        </div>
+                    );
+                }
+                
+
+
+            }
+
+            class Squere extends React.Component{
+                render(){
+                    var squareStyle = {
+                        height:150,
+                        backgroundColor:this.props.bgColor
+                    };
+                    return (
+                        <div style = {squareStyle}>
+                            {this.props.children}</div>
+                    )
+                }
+            }
+
+
+                class Label extends React.Component{
+                    render(){
+                        var labelStyle  = {
+                            fontFamly:'sans-serif',
+                            fontWeight:'bold',
+                            padding:13,
+                            margin: 0 
+                        };
+
+                        return(
+                            <p style ={labelStyle}>{this.props.bgColor}</p>
+                        )
+                    }
+                }            
+
+
+
+                
+            ReactDOM.render(
+            <div>
+             
+                <Cardmaker bgColor = "#94EB3E"/>
+                <Cardmaker bgColor = "#3CA0FF"/>
+                <Cardmaker bgColor = "#14D3FF"/>
+                <Cardmaker bgColor = "#14D3FF"/>
+               
+               
+
+                
+            </div>,
+            document.querySelector("#container")
+
+            );
+
+
+
+        
+        </script>
+    </body>
+        
+        
+
+
+
+
+</html>
