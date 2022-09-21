@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,57 +22,40 @@
     <body>
         <div id = "container">
         <script type = "text/babel">
-            class Circle extends React.Component{
-                render(){
-                    var circleStyle = {
-                        padding:10,
-                        margin: 20,
-                        display : "inline-block",
-                        backgroundColor:this.props.bgColor,
-                        borderRadius:"50%",
-                        width:100,
-                        height:100
-                    };
+            
+        
 
-                    return (
-                        <div style  = {circleStyle}>
+        class Circle extends React.Component{
+            
+            render(){
+                var circleStyle = {
+            padding:10,
+            margin: 20,
+            display : "inline-block",
+            backgroundColor:this.props.bgColor,
+            borderRadius:"50%",
+            width:100,
+            height:100
+            };
+            
 
-                        </div>
-                    );
-                }
-                
-                
-            }
-
-
-            ReactDOM.render(
-                <div>
-                    <Circle bgColor="#F9C240"/>
-                    </div>,
-                    document.querySelector("#container")
-                    
-            );
-
-            var theCircle = <Circle bgColor = "#F9C240"/>
-            var destination = document.querySelector('#container');
-
-            ReactDOM.render(
-                <div>
-                    {showCircle()}
-
-                    </div>,
-                    destination
+            return(
+                <div style= {circleStyle}></div>
             )
-                
-            function showCircle(){
-                var colors = ["#393E41",'#E94F37','#1C89BF',"#A1D363"];
-                var ran = Math.floor(math.random()*colors.length);
-
-                return <Circle bgColor={colors[ran]}/>
 
             }
+        }
+        var colors = ["#365565","#CE2256","#C25226","#565E54"]
+        var random = Math.floor(Math.random()*colors.length)
 
-          
+        ReactDOM.render(
+            <div>
+                    <Circle bgColor = {colors[random]}/>
+            </div>,
+            document.querySelector('#container')
+        )
+
+
 
         
         </script>

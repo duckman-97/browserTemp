@@ -12,12 +12,34 @@
                 background-color : #fff;
 
             }
+
+            .boxStyle{
+                    width: 240px;
+                    height: 240px;
+                    
+                     }
+
         </style>
     </head>
 
     <body>
-        <div id = "container"></div>
+        <div id = "container">
         <script type = "text/babel">
+
+            class Box extends React.Component{
+                render(){
+                    return(
+                        <div className = "boxStyle">hi</div>
+                    )
+                }
+            }
+
+
+
+            ReactDOM.render(
+                <Box />,
+                document.querySelector("#container")
+            )
 
         
         </script>
