@@ -1,16 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import TodoList from "./TodoList";
-
-var destination = document.querySelector("#container");
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import MyList2 from './MyList2';
 
 
 
-ReactDOM.render(
-    <div>
-    <TodoList/>
-    </div>,
-    destination
-    );
-    
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+
+
+
+  <React.StrictMode>
+    <MyList2 />
+  </React.StrictMode>
+);
