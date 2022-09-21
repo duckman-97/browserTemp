@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import IPAddress from "./IPAddress";
 
 
 var xhr;
@@ -10,7 +10,7 @@ class IPAddressContainer extends Component{
 
 
         this.state = {
-            ip_address: '...'
+            ip_address: "..."
         };
 
         this.processRequest=this.processRequest.bind(this);
@@ -22,8 +22,8 @@ class IPAddressContainer extends Component{
 
     componentDidMount(){
 
-        xhr = new XMLHttpRequest();
-    xhr.open("GET","https://ipinfo.io/json",true);
+    xhr = new XMLHttpRequest();
+    xhr.open("GET","https://api.ipify.org?format=json",true);
     xhr.send();
 
     xhr.addEventListener("readystatechange",this.processRequest,false);
@@ -43,7 +43,7 @@ class IPAddressContainer extends Component{
 
     render(){
         return(
-            <div>{this.state.ip_address}</div>
+            <IPAddress ip ={this.state.ip_address}/>
         )
 
     }
